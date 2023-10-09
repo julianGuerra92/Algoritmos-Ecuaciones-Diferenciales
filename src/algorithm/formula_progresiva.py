@@ -15,7 +15,7 @@ class FormulaProgresiva:
         self.value = value
         self.x = symbols('x')
         self.y = symbols('y')
-        self.epsilon = np.logspace(-1, -3, 3, base=10)
+        self.epsilon = np.logspace(-1, -4, 4, base=10)
 
     def calculate_derivate_numeric(self):
         exp = sp.sympify(self.expression)
