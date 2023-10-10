@@ -7,6 +7,7 @@ from algorithm.formula_cinco_puntos import FormulaCincoPuntos
 from algorithm.diferencias_divididas import DiferenciasDivididas
 from algorithm.compuesta_simpsons import ReglaCompuestaSimpsons
 from algorithm.trapecio_compuesta import ReglaTrapecioCompuesta
+from algorithm.metodo_newton import *
 
 menu = '''
       -- Métodos Numéricos --
@@ -78,6 +79,13 @@ while opcion != 0:
    
    elif(opcion == 8):
       print("Método Newton")
+      funcion = input("Ingrese aquí la funcion: ")
+      po = input("Ingresa el valor inicial: ")
+      tol = float(input("Ingresa el nivel de tolerancia o error: "))
+      NoIteraciones = int(input("Ingresa el numero maximo de iteraciones: "))
+      resultado_metodo_newton = MetodoNewton(funcion, po, tol, NoIteraciones)
+      resultado_metodo_newton.imprimir_resultado()
+
       input("Presione enter para continuar...")
 
    elif(opcion == 9):
