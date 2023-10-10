@@ -8,6 +8,8 @@ from algorithm.diferencias_divididas import DiferenciasDivididas
 from algorithm.compuesta_simpsons import ReglaCompuestaSimpsons
 from algorithm.trapecio_compuesta import ReglaTrapecioCompuesta
 from algorithm.metodo_newton import *
+from algorithm.formula_cerrada_newton_cotes import *
+from algorithm.compuesta_punto_medio import ReglaCompuestaPuntoMedio
 
 menu = '''
       -- Métodos Numéricos --
@@ -75,6 +77,12 @@ while opcion != 0:
 
    elif(opcion == 7):
       print("Compuesta Punto Medio")
+      funcion = input("Ingrese la función: ")
+      a = float(input("Ingrese el valor de a: "))
+      b = float(input("Ingrese el valor de b: "))
+      n = int(input("Ingrese el valor de n: "))
+      resultado_compuesta_punto_medio = ReglaCompuestaPuntoMedio(funcion, a, b, n)
+      resultado_compuesta_punto_medio.imprimir_resultado()
       input("Presione enter para continuar...")
    
    elif(opcion == 8):
@@ -89,7 +97,12 @@ while opcion != 0:
       input("Presione enter para continuar...")
 
    elif(opcion == 9):
-      print("Fórmula cerrada de Newton-Cotes")
+      print("Fórmulas cerradas de Newton-Cotes")
+      a = float(input("Ingrese el valor de a: "))
+      b = float(input("Ingrese el valor de b: "))
+      funcion = input("Ingrese la función (ejm: x^2, pi/4): ")
+      resultado_formulas_cerradas = FormulasCerradasNewtonCotes(funcion, a, b)
+      resultado_formulas_cerradas.imprimir_resultado()
       input("Presione enter para continuar...")
    
    else:
